@@ -1,0 +1,83 @@
+
+    <div class="container" ng-controller="IndexController">
+    
+        <div class="row row-content">
+            <div class="col-xs-12 col-sm-3 col-sm-push-9">
+                    <p style="padding:20px;"></p>
+                    <h3 align="center">Best-selling product from our Product Line</h3>
+            </div>
+            <div class="col-xs-12 col-sm-9 col-sm-pull-3">
+                <div ng-if="!showProduct">
+                    <h3>{{productMessage}}</h3>
+                </div>
+                <div class="media" ng-if="showProduct">
+                  <div class="media-left media-middle">
+                    <a ui-sref="app.productdetails({id: product.id})">
+                        <img class="media-object img-thumbnail" ng-src="{{product.image}}" alt="{{product.name}}"/>
+                    </a>
+                  </div>
+                  <div class="media-body">
+                    <h2 class="media-heading">
+                        {{product.name}}
+                        <span class="label label-danger label-xs">{{product.label}}</span>
+                        <span class="badge">{{product.price | currency}}</span>
+                    </h2>
+                    <p>{{product.description}}</p>
+                  </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row row-content">
+            <div class="col-xs-12 col-sm-3">
+                <p style="padding:20px;"></p>
+                <h3 align=center>Current Great Deals</h3>
+            </div>
+            <div class="col-xs-12 col-sm-9">
+              <div ng-if="!showDeal">
+                    <h3>{{dealMessage}}</h3>
+              </div>
+              <div class="media" ng-if="showDeal">
+                <div class="media-left media-middle">
+                    <a href="#">
+                        <img class="media-object img-thumbnail" ng-src="{{deal.image}}" alt="{{deal.name}}"/>
+                    </a>
+                </div>
+                <div class="media-body">
+                    <h2 class="media-heading">
+                        {{deal.name}}
+                        <span class="label label-danger label-xs">{{deal.label}}</span>
+                        <span class="badge">{{deal.price | currency}}</span>
+                    </h2>
+                    <p>{{deal.description}}</p>
+                </div>
+            </div>
+
+
+            </div>
+        </div>
+
+        <div class="row row-content">
+            <div class="col-xs-12 col-sm-3 col-sm-push-9">
+                <p style="padding:20px;"></p>
+                <h3 align=center>Our Management Team - lead by our CEO</h3>
+            </div>
+            <div class="col-xs-12 col-sm-9 col-sm-pull-3">
+
+              <div ng-if="!showCEO">
+                    <h3>{{ceoMessage}}</h3>
+              </div>
+              <div class="media" ng-if="showCEO">
+                <div class="media-left media-middle">
+                    <img class="media-object img-thumbnail" ng-src="{{ceo.image}}" alt="{{ceo.name}}"/>
+                </div>
+                <div class="media-body">
+                    <h2 class="media-heading">{{ceo.name}}</h2>
+                    <h4 class="media-heading"><span class="text-muted small">{{ceo.designation}}</span></h4>
+                    <p> {{ceo.description}} </p>
+                    <p><a class="btn btn-primary btn-xs" ui-sref="app.ourCompany">More &raquo;</a></p>
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>

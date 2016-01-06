@@ -1,0 +1,100 @@
+
+    <div class="container" ng-controller="AboutController">
+        <div class="row">
+            <div class="col-xs-12">
+               <ul class="breadcrumb">
+                   <li><a href="index.html">Home</a></li>
+                   <li class="active">About Us</li>
+               </ul>
+            </div>
+            <div class="col-xs-12">
+               <h3>About Us</h3>
+               <hr>
+            </div>
+        </div>
+        
+        <div class="row row-content">
+            <div class="col-xs-12 col-sm-8">
+                <h2>Our History</h2>
+                <p>Created in 2016, ....</p>
+                <div class="well">
+                    <blockquote>
+                        <p>We'll invent the best wheel you've ever seen - elliptical wheels are the future.</p>
+                        <footer>Dr CEO,  
+                        <cite title="Source Title">BIG COMPANY about to take off, I. B. Had, Harvard Business Review, 2015 Jan</cite></footer>
+                    </blockquote>                
+                </div>
+
+            </div>
+            <div class="col-xs-12 col-sm-4">
+
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">The company at a Glance</h3>
+                    </div>
+                    <div class="panel-body">
+                        <dl class="dl-horizontal">
+                            <dt>Started</dt>
+                            <dd>1 Jan. 2016</dd>
+                            <dt>Main stockholder</dt>
+                            <dd>ANOTHER BIG COMPANY.</dd>
+                            <dt>Last Year's Revenue</dt>
+                            <dd>$334,216</dd>
+                            <dt>Employees</dt>
+                            <dd>4</dd>
+                       </dl>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row row-content">
+            <div class="col-xs-12 col-sm-9">
+                <h2>Corporate Management</h2>
+               <ul class="media-list">
+               <div ng-if="!showManagement">
+                    <h3>{{message}}</h3>
+               </div>
+               <div class="media" ng-if="showManagement">
+               <li ng-repeat="manager in management">
+                    <div class="media-left media-middle">
+			<a href="#">
+                        <img class="media-object img-thumbnail" ng-src={{manager.image}} alt="{{manager.name}}">
+			</a>
+                    </div>
+                    <div class="media-body">
+                        <h2 class="media-heading">{{manager.name}}
+                            <span class="small">{{manager.designation}}</span>
+                        </h2>
+                        <p> {{manager.description}} </p>
+                    </div>
+                </li>
+                </div>
+               </ul>
+
+            </div>
+             <div class="col-xs-12 col-sm-3">
+                <p style="padding:20px;"></p>
+            </div>
+       </div>
+        <div class="row row-content">
+            <div class="col-xs-12 col-sm-9">
+                <h2>Facts &amp; Figures</h2>
+                <div class="table-responsive">
+                <table class="table table-striped">
+                    <tr> <td> &nbsp; </td> <th> 2016 </th> <th> 2017 </th> <th> 2018 </th> </tr>
+                    <tr> <th> Employees </th> <td> 4 </td> <td> 20 </td> <td> 417 </td> </tr>
+                    <tr> <th> Units Sold </th> <td> 15000 </td> <td> 45000 </td> <td> 100,000 </td> </tr>
+                    <tr> <th> Returns </th> <td> 1 </td> <td> 7 </td> <td> 145 </td>
+                    
+                    </tr>
+                    <tr> <th> Annual Turnover </th> <td> $103 </td> <td> $2,187 </td> <td> ~$2,831,964</td> </tr>
+                </table>
+                </div>
+            </div>
+             <div class="col-xs-12 col-sm-3">
+                <p style="padding:20px;"></p>
+            </div>
+       </div> 
+    </div>
